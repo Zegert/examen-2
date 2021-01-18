@@ -1,10 +1,10 @@
 <nav>
     <ul class="nav nav-pills nav-fill">
         <li class="nav-item">
-            <a class="nav-link" href="home.php">Enquete Website</a>
+            <a class="nav-link" href="../docent/home.php">Enquete Website</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="studenten.php">Studenten</a>
+            <a class="nav-link" href="../docent/studenten.php">Studenten</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="../users/docent_new.php">Nieuwe docent</a>
