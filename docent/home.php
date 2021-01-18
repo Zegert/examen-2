@@ -1,4 +1,10 @@
-    <html lang="en">
+<?php
+require_once '../Includes/config.php';
+if (!isset($_SESSION['rang']) || $_SESSION['rang'] < 2) {
+    header('Location: ../index.php');
+}
+?>
+  <html lang="en">
 
     <head>
         <meta charset="UTF-8">
@@ -8,19 +14,9 @@
     </head>
 
     <body>
-        <nav>
-            <ul class="nav nav-pills nav-fill">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="home.php">Enquete Website</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="studenten.php">Studenten</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../logout.php">Log uit</a>
-                </li>
-            </ul>
-        </nav>
+<?php
+    include_once("../Includes/nav.php");
+?>
         <table class="table table-striped">
         <thead class="thead-dark">
             <tr>

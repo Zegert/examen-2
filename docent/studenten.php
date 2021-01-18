@@ -1,5 +1,9 @@
 <?php
 require_once "../Includes/config.php";
+
+if (!isset($_SESSION['rang']) || $_SESSION['rang'] < 2) {
+    header('Location: ../index.php');
+}
 ?>
 <html lang="en">
 
@@ -11,19 +15,9 @@ require_once "../Includes/config.php";
 </head>
 
 <body>
-    <nav>
-        <ul class="nav nav-pills nav-fill">
-            <li class="nav-item">
-                <a class="nav-link" href="home.php">Enquete Website</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="studenten.php">Studenten</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="../logout.php">Log uit</a>
-            </li>
-        </ul>
-    </nav>
+<?php
+    include_once("../Includes/nav.php");
+?>
     <table class="table table-striped">
         <thead class="thead-dark">
             <tr>
@@ -49,8 +43,8 @@ while ($row = $result->fetch()) {
     echo "<td>" . $row['Adress'] . "</td>";
     echo "<td>" . $row['PostalCode'] . "</td>";
     echo "<td>" . $row['City'] . "</td>";
-    echo "<td>" . $row['Age'] . "</td>";
-    echo "<td>" . $row['email'] . "</td>";
+    echo "<td>" . $row['Age'] . " jaar</td>";
+    echo "<td><a href='mailto:" . $row['email'] . "'> " . $row['email'] . "</td>";
     echo "</tr>";
 }
 ?>
